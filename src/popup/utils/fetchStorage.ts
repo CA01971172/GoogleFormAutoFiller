@@ -1,20 +1,20 @@
 /* 型定義 */
 // storageから取得する、データ全体の型
-type DataInfo = {
+export type DataInfo = {
     data?: {
         forms: FormInfo[];
     };
 };
 
-// 個別タブの型
-type FormInfo = {
+// 個別フォームの型
+export type FormInfo = {
     label: string;
     text: string;
 };
 
 /* 関数定義 */
-// chrome.storageからタブのデータを取得する関数
-export async function getTabData(): Promise<FormInfo[]>{
+// chrome.storageからフォームのデータを取得する関数
+export async function getFormData(): Promise<FormInfo[]>{
     let initialData: FormInfo[] = []; //デフォルト値
     return new Promise<FormInfo[]>((resolve, _reject) => {
         try{
@@ -35,8 +35,8 @@ export async function getTabData(): Promise<FormInfo[]>{
     });
 }
 
-// chrome.storageに現在のデータを保存する関数
-export async function saveTabData(forms: FormInfo[]): Promise<DataInfo>{
+// chrome.storageにフォームのデータを保存する関数
+export async function saveFormData(forms: FormInfo[]): Promise<DataInfo>{
     return new Promise<DataInfo>((resolve, _reject) => {
         try{
             // chrome.storageに現在のデータを保存する
