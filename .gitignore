@@ -1,4 +1,6 @@
-dist/
+dist/*
+!dist/manifest.json
+dist.zip
 
 # Logs
 logs
