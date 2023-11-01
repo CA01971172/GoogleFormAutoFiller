@@ -1,5 +1,6 @@
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useState, useEffect, ReactNode } from 'react';
 import { DataInfo, FormInfo, getFormData, saveFormData } from '../utils/fetchStorage';
+import { v4 as uuidv4 } from "uuid";
 
 /* Provider定義 */
 type DataContextInfo = {
@@ -26,14 +27,16 @@ export function DataProvider({children}: {children: ReactNode}){
 
     // storageのデータを取得し、フォームのデータを初期化する
     useEffect(() => {
-        getFormData().then((response: FormInfo[]) => {
-            setFormArray(response);
-        });
+        // getFormData().then((response: FormInfo[]) => {
+        //     setFormArray(response);
+        // });
+        setFormArray([{id: "111", label: "メアド", text: "hoge@fuga.com"}, {id: "222", label: "名前", text: "hogehoge"}])
     }, []);
 
     // フォームを追加する関数
     function addForm(): void{
         const newTab: FormInfo = {
+            id: uuidv4(),
             label: "",
             text: ""
         };

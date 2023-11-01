@@ -1,7 +1,9 @@
-export default function Table() {
+import FormTable from "./components/FormTable";
+
+export default function App() {
     return (
         <>
-            hoge
+            <FormTable/>
         </>
     )
 }

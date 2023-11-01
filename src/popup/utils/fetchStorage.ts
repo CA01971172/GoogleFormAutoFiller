@@ -8,6 +8,7 @@ export type DataInfo = {
 
 // 個別フォームの型
 export type FormInfo = {
+    id: string;
     label: string;
     text: string;
 };
