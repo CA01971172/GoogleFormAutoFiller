@@ -10,9 +10,10 @@ export default function FormTable() {
 
     return (
         <Grid container spacing={2}>
-            {formArray.map(data => (
+            {formArray.map((data, index) => (
                 <FormTableRow
                     key={data.id}
+                    index={index}
                     data={data}
                 />
             ))}
