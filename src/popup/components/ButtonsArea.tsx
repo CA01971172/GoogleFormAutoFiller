@@ -2,9 +2,11 @@ import { useContext } from "react"
 import { DataContext } from "../providers/DataProvider"
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import SaveIcon from '@mui/icons-material/Save';
 import SaveAsIcon from '@mui/icons-material/SaveAs';
+import HelpIcon from '@mui/icons-material/Help';
 
 export default function ButtonsArea() {
     const {
@@ -26,6 +28,7 @@ export default function ButtonsArea() {
             width="100%"
         // その他スタイル
             boxShadow={3}
+            position="relative"
         >
             <Button
                 variant="contained"
@@ -49,6 +52,20 @@ export default function ButtonsArea() {
             >
                 保存
             </Button>
+            <Box
+                display="box"
+                position="absolute"
+                right={1}
+                marginRight={1}
+            >
+                <IconButton
+                    aria-label="help"
+                    color="secondary"
+                    href="https://github.com/CA01971172/GoogleFormAutoFiller#readme"
+                >
+                    <HelpIcon/>
+                </IconButton>
+            </Box>
         </Box>
     )
 }

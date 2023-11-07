@@ -47,7 +47,7 @@ export default function FormTableRow({data, index}: {data: FormInfo, index: numb
             </Grid>
             <Grid item xs={2}>
                 <IconButton aria-label="delete">
-                    <DeleteIcon />
+                    <DeleteIcon/>
                 </IconButton>
             </Grid>
         </>

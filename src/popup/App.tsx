@@ -9,7 +9,10 @@ export default function App() {
     const theme = createTheme({
         palette: {
             primary: {
-                main: "#673ab7",
+                main: "#673ab7"
+            },
+            secondary: {
+                main: "rgba(0, 0, 0, 0.54)"
             }
         }  
     });
