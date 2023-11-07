@@ -1,5 +1,5 @@
 {
-    "name": "Google Form自動入力",
+    "name": "Google Form 自動入力",
     "description": "Google Formを開いた際、既定のラベルにテキストを自動で入力します。",
     "version": "1.0",
     "manifest_version": 3,
@@ -13,7 +13,7 @@
     ],
     "action": {
         "default_icon": "image/icon128.png",
-        "default_title": "Google Form自動入力",
+        "default_title": "Google Form 自動入力",
         "default_popup": "popup/index.html"
     },
     "content_scripts": [{

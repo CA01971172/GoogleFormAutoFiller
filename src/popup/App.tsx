@@ -2,6 +2,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import FormTable from "./components/FormTable";
 import ButtonsArea from './components/ButtonsArea';
 import Box from '@mui/material/Box';
+import TitleHeader from './components/TitleHeader';
 
 export default function App() {
     // MUIのスタイル
@@ -19,10 +20,10 @@ export default function App() {
             <Box
                 width={500}
                 height={300}
-                border="1px red solid"
                 display="flex"
                 flexDirection="column"
             >
+                <TitleHeader/>
                 <FormTable/>
                 <ButtonsArea/>
             </Box>

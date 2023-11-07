@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
@@ -45,9 +46,9 @@ export default function FormTableRow({data, index}: {data: FormInfo, index: numb
                 />
             </Grid>
             <Grid item xs={2}>
-            <IconButton aria-label="delete">
-                <DeleteIcon />
-            </IconButton>
+                <IconButton aria-label="delete">
+                    <DeleteIcon />
+                </IconButton>
             </Grid>
         </>
     )
