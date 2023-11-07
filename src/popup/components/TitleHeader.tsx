@@ -6,7 +6,7 @@ export default function TitleHeader(){
             display="flex"
             justifyContent="center"
             py={1}
-            boxShadow={3}
+            boxShadow={1}
         >
             <Box fontSize={24}>Google Form 自動入力</Box>
         </Box>

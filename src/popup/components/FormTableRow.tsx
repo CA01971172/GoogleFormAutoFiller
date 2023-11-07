@@ -9,6 +9,7 @@ import { DataContext } from '../providers/DataProvider';
 export default function FormTableRow({data, index}: {data: FormInfo, index: number}) {
     const {
         rewriteForm,
+        deleteForm,
         setIsDoneSave
     } = useContext(DataContext);
 
@@ -45,7 +46,13 @@ export default function FormTableRow({data, index}: {data: FormInfo, index: numb
                 />
             </Grid>
             <Grid item xs={2}>
-                <IconButton aria-label="delete">
+                <IconButton
+                    aria-label="delete"
+                    onClick={() => {
+                        deleteForm(index);
+                        setIsDoneSave(false);
+                    }}
+                >
                     <DeleteIcon/>
                 </IconButton>
             </Grid>

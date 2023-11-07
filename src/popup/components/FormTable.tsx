@@ -12,6 +12,7 @@ export default function FormTable() {
 
     return (
         <Box
+            paddingLeft={1}
             flex="1"
             style={{
                 overflowY: "auto",

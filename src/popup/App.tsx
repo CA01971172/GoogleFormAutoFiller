@@ -25,6 +25,7 @@ export default function App() {
                 height={300}
                 display="flex"
                 flexDirection="column"
+                boxShadow={1}
             >
                 <TitleHeader/>
                 <FormTable/>
