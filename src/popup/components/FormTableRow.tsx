@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { FormInfo } from "../utils/fetchStorage";
+import { FormInfo } from "../../utils/fetchStorage";
 import { DataContext } from '../providers/DataProvider';
 
 export default function FormTableRow({data, index}: {data: FormInfo, index: number}) {

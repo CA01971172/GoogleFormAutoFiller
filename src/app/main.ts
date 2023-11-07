@@ -1,1 +1,14 @@
-console.log("hoge")
+import { FormInfo, getFormData } from "../utils/fetchStorage";
+import { fillInputInTheLabel } from "./fetchGoogleForm";
+
+// chrome.storage.localに保存されたフォームデータを、GoogleFormに入力する関数
+async function main(): Promise<void>{
+    const formData: FormInfo[] = await getFormData();
+    formData.forEach(value => {
+        fillInputInTheLabel(value.label, value.text);
+    })
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+    main();
+});
