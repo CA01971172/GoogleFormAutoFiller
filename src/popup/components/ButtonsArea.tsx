@@ -8,6 +8,8 @@ import SaveIcon from '@mui/icons-material/Save';
 import SaveAsIcon from '@mui/icons-material/SaveAs';
 import HelpIcon from '@mui/icons-material/Help';
 
+const DOCUMENT_URL: string = "https://github.com/CA01971172/GoogleFormAutoFiller#readme";
+
 export default function ButtonsArea() {
     const {
         addForm,
@@ -61,7 +63,9 @@ export default function ButtonsArea() {
                 <IconButton
                     aria-label="help"
                     color="secondary"
-                    href="https://github.com/CA01971172/GoogleFormAutoFiller#readme"
+                    onClick={() => {
+                        chrome.tabs.create({url: DOCUMENT_URL});
+                    }}
                 >
                     <HelpIcon/>
                 </IconButton>
