@@ -8,7 +8,8 @@ import { DataContext } from '../providers/DataProvider';
 
 export default function FormTableRow({data, index}: {data: FormInfo, index: number}) {
     const {
-        rewriteForm
+        rewriteForm,
+        setIsDoneSave
     } = useContext(DataContext);
 
     return (
@@ -19,7 +20,10 @@ export default function FormTableRow({data, index}: {data: FormInfo, index: numb
                     placeholder="指定するラベル名を入力"
                     // multiline
                     value={data.label}
-                    onChange={(event) => rewriteForm(index, "label", event.target.value)}
+                    onChange={(event) => {
+                        rewriteForm(index, "label", event.target.value);
+                        setIsDoneSave(false);
+                    }}
                     variant="standard"
                     fullWidth
                     color="primary"
@@ -31,7 +35,10 @@ export default function FormTableRow({data, index}: {data: FormInfo, index: numb
                     placeholder="指定のラベルに入力する内容を入力"
                     // multiline
                     value={data.text}
-                    onChange={(event) => rewriteForm(index, "text", event.target.value)}
+                    onChange={(event) => {
+                        rewriteForm(index, "text", event.target.value);
+                        setIsDoneSave(false);
+                    }}
                     variant="standard"
                     fullWidth
                     color="primary"

@@ -9,7 +9,9 @@ import SaveAsIcon from '@mui/icons-material/SaveAs';
 export default function ButtonsArea() {
     const {
         addForm,
-        saveCurrentData
+        saveCurrentData,
+        isDoneSave,
+        setIsDoneSave
     } = useContext(DataContext);
 
     return (
@@ -29,15 +31,21 @@ export default function ButtonsArea() {
                 variant="contained"
                 color="primary"
                 startIcon={<AddIcon />}
-                onClick={addForm}
+                onClick={() => {
+                    addForm();
+                    setIsDoneSave(false);
+                }}
             >
                 追加
             </Button>
             <Button
                 variant="contained"
                 color="success"
-                startIcon={<SaveIcon/>}
-                onClick={saveCurrentData}
+                startIcon={isDoneSave ? <SaveIcon/> : <SaveAsIcon/>}
+                onClick={() => {
+                    saveCurrentData();
+                    setIsDoneSave(true);
+                }}
             >
                 保存
             </Button>
