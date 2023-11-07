@@ -1,6 +1,7 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import FormTable from "./components/FormTable";
 import ButtonsArea from './components/ButtonsArea';
+import Box from '@mui/material/Box';
 
 export default function App() {
     // MUIのスタイル
@@ -14,17 +15,17 @@ export default function App() {
 
 
     return (
-        <div
-            style={{
-                width: 300,
-                height: 300,
-                border: "1px red solid"
-            }}
-        >
-            <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+            <Box
+                width={500}
+                height={300}
+                border="1px red solid"
+                display="flex"
+                flexDirection="column"
+            >
                 <FormTable/>
                 <ButtonsArea/>
-            </ThemeProvider>
-        </div>
+            </Box>
+        </ThemeProvider>
     )
 }

@@ -17,7 +17,7 @@ export default function FormTableRow({data, index}: {data: FormInfo, index: numb
                 <TextField
                     label="指定のラベル"
                     placeholder="指定するラベル名を入力"
-                    multiline
+                    // multiline
                     value={data.label}
                     onChange={(event) => rewriteForm(index, "label", event.target.value)}
                     variant="standard"
@@ -29,7 +29,7 @@ export default function FormTableRow({data, index}: {data: FormInfo, index: numb
                 <TextField
                     label="入力する内容"
                     placeholder="指定のラベルに入力する内容を入力"
-                    multiline
+                    // multiline
                     value={data.text}
                     onChange={(event) => rewriteForm(index, "text", event.target.value)}
                     variant="standard"

@@ -7,8 +7,10 @@ type DataContextInfo = {
     formArray: FormInfo[];
     addForm(): void;
     deleteForm(index: number): void;
-    rewriteForm(targetIndex: number, field: "label" | "text", newText: string,): void
-    saveCurrentData(): Promise<DataInfo>
+    rewriteForm(targetIndex: number, field: "label" | "text", newText: string,): void;
+    saveCurrentData(): Promise<DataInfo>;
+    isDoneSave: boolean;
+    setIsDoneSave: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const initialContext: DataContextInfo = {
@@ -16,7 +18,9 @@ const initialContext: DataContextInfo = {
     addForm: () => {},
     deleteForm: () => {},
     rewriteForm: () => {},
-    saveCurrentData: () => Promise.resolve({})
+    saveCurrentData: () => Promise.resolve({}),
+    isDoneSave: true,
+    setIsDoneSave: () => {}
 };
 
 export const DataContext = createContext<DataContextInfo>(initialContext);
@@ -24,6 +28,9 @@ export const DataContext = createContext<DataContextInfo>(initialContext);
 export function DataProvider({children}: {children: ReactNode}){
     // フォームのデータを管理するstate
     const [formArray, setFormArray] = useState<FormInfo[]>([]);
+
+    // 保存済みかどうかを管理するstate
+    const [isDoneSave, setIsDoneSave] = useState<boolean>(true);
 
     // storageのデータを取得し、フォームのデータを初期化する
     useEffect(() => {
@@ -79,7 +86,9 @@ export function DataProvider({children}: {children: ReactNode}){
                 addForm,
                 deleteForm,
                 rewriteForm,
-                saveCurrentData
+                saveCurrentData,
+                isDoneSave,
+                setIsDoneSave
             }}
         >
             {children}

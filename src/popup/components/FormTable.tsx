@@ -1,6 +1,7 @@
 import { useContext } from "react"
-import Grid from '@mui/material/Grid';
 import { DataContext } from "../providers/DataProvider"
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import FormTableRow from "./FormTableRow";
 
 export default function FormTable() {
@@ -9,14 +10,18 @@ export default function FormTable() {
     } = useContext(DataContext);
 
     return (
-        <div
+        <Box
+            flex="1"
+            border="1px blue solid"
             style={{
-                height: "100%",
                 overflowY: "auto",
                 overflowX: "hidden"
             }}
         >
-            <Grid container spacing={2}>
+            <Grid
+                container
+                spacing={2}
+            >
                 {formArray.map((data, index) => (
                     <FormTableRow
                         key={data.id}
@@ -25,6 +30,6 @@ export default function FormTable() {
                     />
                 ))}
             </Grid>
-        </div>
+        </Box>
     )
 }
