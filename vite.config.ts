@@ -13,7 +13,6 @@ export default defineConfig({
     outDir,
     rollupOptions: {
       input: {
-        app: resolve(root, "app", "main.ts"),
         popup: resolve(root, "popup", "index.html"),
       },
       output: {

@@ -9,6 +9,4 @@ async function main(): Promise<void>{
     })
 }
 
-document.addEventListener('DOMContentLoaded', function(){
-    main();
-});
+main();

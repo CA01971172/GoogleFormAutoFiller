@@ -32,6 +32,8 @@ export function fillInputInTheLabel(labelName: string, text: string){ // 特定�
         return span?.textContent === labelName;
     });
 
+    console.log(labelName, listItem)
+
     if(listItem){
         const formInput = listItem.querySelector("input"); // 指定されたラベルと合致するラベルを持ったinput要素を取得する
         if(formInput){
