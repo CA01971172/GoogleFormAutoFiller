@@ -13,8 +13,16 @@ export default function App() {
 
 
     return (
-        <ThemeProvider theme={theme}>
-            <FormTable/>
-        </ThemeProvider>
+        <div
+            style={{
+                width: 300,
+                height: 300,
+                border: "1px red solid"
+            }}
+        >
+            <ThemeProvider theme={theme}>
+                <FormTable/>
+            </ThemeProvider>
+        </div>
     )
 }
