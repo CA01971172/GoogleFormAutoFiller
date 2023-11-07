@@ -16,13 +16,22 @@ export type FormInfo = {
 /* 関数定義 */
 // chrome.storageからフォームのデータを取得する関数
 export async function getFormData(): Promise<FormInfo[]>{
-    let initialData: FormInfo[] = []; //デフォルト値
+    let initialForm: FormInfo = {
+        id: "f467b740-c90d-3627-39b6-9585c3ff1011",
+        label: "",
+        text: ""
+    }
+    let initialData: FormInfo[] = [initialForm]; //デフォルト値
     return new Promise<FormInfo[]>((resolve, _reject) => {
         try{
             chrome.storage.local.get(["data"], function(response: DataInfo){
                 try{
                     const tabs: FormInfo[] = response["data"]?.["forms"] as FormInfo[] || [];
-                    resolve(tabs);
+                    if(tabs.length <= 0){
+                        resolve(initialData); // フォームデータが1つも無い場合は、仮データを返す
+                    }else{
+                        resolve(tabs);
+                    }
                 }catch(error) {
                     // データが存在しない場合、デフォルトデータを代わりに取得する
                     resolve(initialData);
