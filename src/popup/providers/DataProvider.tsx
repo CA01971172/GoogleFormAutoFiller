@@ -34,10 +34,9 @@ export function DataProvider({children}: {children: ReactNode}){
 
     // storageのデータを取得し、フォームのデータを初期化する
     useEffect(() => {
-        // getFormData().then((response: FormInfo[]) => {
-        //     setFormArray(response);
-        // });
-        setFormArray([{id: "111", label: "メアド", text: "hoge@fuga.com"}, {id: "222", label: "名前", text: "hogehoge"}])
+        getFormData().then((response: FormInfo[]) => {
+            setFormArray(response);
+        });
     }, []);
 
     // フォームを追加する関数
