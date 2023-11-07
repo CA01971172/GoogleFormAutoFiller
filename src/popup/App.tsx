@@ -1,5 +1,6 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import FormTable from "./components/FormTable";
+import ButtonsArea from './components/ButtonsArea';
 
 export default function App() {
     // MUIのスタイル
@@ -22,6 +23,7 @@ export default function App() {
         >
             <ThemeProvider theme={theme}>
                 <FormTable/>
+                <ButtonsArea/>
             </ThemeProvider>
         </div>
     )
