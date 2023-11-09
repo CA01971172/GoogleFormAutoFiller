@@ -21,7 +21,7 @@ Chromeのブラウザ画面右上の「拡張機能」ボタンより、「Googl
 ![image](https://github.com/CA01971172/GoogleFormAutoFiller/assets/107534447/9cbeff44-0508-404c-a2f8-aa19528c283c)
 
 項目を追加したい場合は、追加ボタンを押します。  
-![image](https://github.com/CA01971172/GoogleFormAutoFiller/assets/107534447/8a3f192a-5a91-490a-90f7-be77c6e9ecb7)
+![image](https://github.com/CA01971172/GoogleFormAutoFiller/assets/107534447/84be89fa-13c7-4c1e-98e0-b077b42df185)
 
 編集が終わったら、必ず**保存ボタンを押してください**。  
 保存ボタンを押さずにポップアップを閉じると、編集後のデータが保存されませんので、注意してください。  
