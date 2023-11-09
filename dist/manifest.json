@@ -1,7 +1,7 @@
 {
     "name": "Google Form 自動入力",
     "description": "Google Formを開いた際、既定のラベルにテキストを自動で入力します。",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 3,
     "icons": {
         "16": "image/icon16.png",
